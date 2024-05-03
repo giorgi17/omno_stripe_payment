@@ -1,0 +1,20 @@
+<%- include('includes/head.ejs') %>
+    </head>
+
+    <body>
+        <main class="centered">
+          This is customerTransactionPage
+        </main>
+        <%- include('includes/end.ejs') %>
+
+        <script src="https://js.stripe.com/v3/"></script>
+        <script>
+            const stripe = Stripe('<%= publishable_key %>');
+
+            stripe.redirectToCheckout({
+              sessionId: '<%= sessionId %>'
+            });
+        </script>
+
+
+<%- include('includes/end.ejs') %>
